@@ -1,7 +1,7 @@
 # length is at least 6
 # contains at least one digit
-# contains at least one lowercase English character
-# contains at least one uppercase English character
+# contains at least one lowercase letter
+# contains at least one uppercase letter
 # contains at least one special character
 
 def minimumNumber(n, password):
