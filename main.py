@@ -5,7 +5,7 @@
 # contains at least one special character
 
 def minimumNumber(n, password):
-    # Return the minimum number of characters to make the password strong
+    # determines the strength of a given password
     password = list(password)
     isStrong = 0
     charsNeeded = 0
