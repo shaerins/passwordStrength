@@ -27,11 +27,13 @@ def minimumNumber(n, password):
             hasSpecial = True
             isStrong += 1
             
-    if(isStrong < 5):
-        charsNeeded = max(6 - n, 4 - isStrong)
-        return charsNeeded
+    charsNeeded = max(6-n, 4-isStrong)
+    if(charsNeeded == 0):
+        print("Strong")
+    elif(charsNeeded < 3):
+        print("Medium")
     else:
-        return charsNeeded
+        print("Weak")
 
 password = input()
 n = len(password)
