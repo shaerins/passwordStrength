@@ -4,9 +4,8 @@
 # contains at least one uppercase letter
 # contains at least one special character
 
-def minimum_number(n, password):
+def passwordStrength(n, password):
     # determines the strength of a given password
-    password = list(password)
     is_strong = 0
     chars_needed = 0
     has_lower = False
@@ -19,23 +18,23 @@ def minimum_number(n, password):
             is_strong += 1
         if(password[i].islower() and not has_lower):
             has_lower = True
-            is_strong = 1
+            is_strong += 1
         if(password[i].isupper() and not has_upper):
             has_upper = True
             is_strong += 1
         if(password[i] in "!@#$%^&*()-+" and not has_special):
             has_special = True
             is_strong += 1
-            
+
     chars_needed = max(6-n, 4-is_strong)
     if(chars_needed == 0):
-        print("Strong")
+        return "Strong"
     elif(chars_needed < 3):
-        print("Medium")
+        return "Medium"
     else:
-        print("Weak")
+        return "Weak"
 
 password = input()
 n = len(password)
-check = minimum_number(n, password)
+check = passwordStrength(n, password)
 print(check)
